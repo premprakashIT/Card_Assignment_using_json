@@ -1,0 +1,88 @@
+<!doctype>
+<html>
+
+<head>
+    <title>Make Card using json</title>
+    <link rel="Stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        /* Custom CSS to remove default padding and margin */
+        body,
+        .container-fluid {
+            padding: 0;
+            margin: 0;
+        }
+        .card-body,.card-header{
+            text-align: center;
+        }
+    </style>
+    <script>
+        var products = [
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" },
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" },
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" },
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" },
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" },
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" },
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" },
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" },
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" },
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" },
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" },
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" },
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" },
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" },
+            { Name: "Angular", Price: 5600, Photo: "/assets/angular.jpeg" },
+            { Name: "ASP.Dotnet", Price: 5000, Photo: "/assets/asp.net.png" }
+            // {Name: "Cloths", Price: 5000, Photo:"/assets/Cloths1.jpg"},
+            // {Name: "Woment Clothes", Price: 5600, Photo:"/assets/women_clothes.jpg"},
+            // {Name: "Woment Clothes", Price: 5600, Photo:"/assets/women_clothes.jpg"},
+            // {Name: "Cloths", Price: 5000, Photo:"/assets/Cloths1.jpg"},
+            // {Name: "FootWear", Price:3000, Photo:"/assets/footwear.jpg"}
+
+        ]
+        function bodyload()
+        {
+            for (var product of products) 
+            {
+                var card = document.createElement("div");
+                card.className = "card-w-25 m-2 p-2";
+            card.innerHTML =
+            `<img src=${product.Photo} height="200" class="card-img-top">
+            <div class="card-header">
+                <h2>${product.Name}</h2>
+            </div>
+            <div class="card-body">
+                <p> &#8377; ${product.Price}
+               
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-danger w-100">
+                    <span class="bi bi-cart4"></span>Add Cart
+                    </button>
+            </div>
+            `;
+                document.getElementById("catalog").appendChild(card);
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <div id="catalog" class="d-flex flex-wrap justify-content-around ">
+    </div>
+</body>
+</html>
